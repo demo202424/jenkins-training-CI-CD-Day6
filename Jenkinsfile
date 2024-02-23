@@ -18,7 +18,7 @@ pipeline {
         // Step 3
         stage('Build docker image') {
                 steps {
-                    sh "sudo docker build -t demo202424/javaapp-day6:${BUILD_NUMBER} ."
+                    sh "sudo docker build -t goluops/devops:javaapp:${BUILD_NUMBER} ."
                 }
         }
         
@@ -28,7 +28,7 @@ pipeline {
                     withCredentials([string(credentialsId: 'DOCKERHUB_PASSWORD', variable: 'VAR_FOR_DOCKERPASS')]) {
                     sh "sudo docker login -u DOCKERHUB_USERNAME -p $VAR_FOR_DOCKERPASS"
                     }
-                    sh "sudo docker push demo202424/javaapp-day6:${BUILD_NUMBER}"
+                    sh "sudo docker push goluops/devops:javaapp:${BUILD_NUMBER}"
                 }
         }
         
