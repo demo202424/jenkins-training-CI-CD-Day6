@@ -5,7 +5,7 @@ pipeline {
         // Step 1
         stage('SCM') {
                 steps {
-                    git 'https://github.com/webdevprashant/jenkins-training-CI-CD-Day6.git'
+                    git 'https://github.com/demo202424/jenkins-training-CI-CD-Day6.git'
                 }        
         }
         // Step 2
@@ -18,7 +18,7 @@ pipeline {
         // Step 3
         stage('Build docker image') {
                 steps {
-                    sh "sudo docker build -t webdevprashant/javaapp-day6:${BUILD_NUMBER} ."
+                    sh "sudo docker build -t demo202424/javaapp-day6:${BUILD_NUMBER} ."
                 }
         }
         
