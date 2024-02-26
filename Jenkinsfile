@@ -10,7 +10,8 @@ pipeline {
         }
         // Step 2
         stage('Build by Maven') {
-                steps {
+                steps { 
+                    sh 'sudo su'
                     sh 'mvn clean package'
                 }
         }
